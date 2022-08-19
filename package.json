@@ -27,6 +27,6 @@
   "dependencies": {
     "msgbroker-nxg-cg": "^0.1.0",
     "ssh2-sftp-client": "^8.1.0",
-    "utils-nxg-cg": "^1.0.7"
+    "utils-nxg-cg": "^1.0.9"
   }
 }
