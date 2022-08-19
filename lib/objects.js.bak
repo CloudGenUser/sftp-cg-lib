@@ -24,8 +24,7 @@ const objectSFTPOpt = {
     nameDeleteFile:null,
     createDirectory:null,
     deleteDirectory:null,
-    localDirectory:null,
-    encoding:null
+    localDirectory:null
 };
 
 module.exports = {
