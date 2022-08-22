@@ -1,7 +1,7 @@
 {
   "name": "sftp-cg-lib",
-  "version": "1.0.9",
-  "description": "SFTP component for stablish connections with a sftp server and make this actions: View list of files inside a directory, get one file in base64, write a new file, delete a file, rename a file, create directories, delete direcgories.",
+  "version": "1.0.10",
+  "description": "SFTP component for establish connections with a sftp server and make this actions: View list of files inside a directory, get one file in base64, write a new file, delete a file, rename a file, create directories, delete direcgories.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -27,6 +27,6 @@
   "dependencies": {
     "msgbroker-nxg-cg": "^0.1.0",
     "ssh2-sftp-client": "^8.1.0",
-    "utils-nxg-cg": "^1.0.9"
+    "utils-nxg-cg": "^1.0.10"
   }
 }
