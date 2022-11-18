@@ -25,7 +25,7 @@
   "author": "Jafet Malvaez Lopez <jafet.malvaez@cloudgensys.com> (https://www.cloudgensys.com/)",
   "license": "ISC",
   "dependencies": {
-    "ssh2-sftp-client": "^8.1.0",
+    "ssh2-sftp-client": "^9.0.4",
     "utils-nxg-cg": "^1.1.15"
   }
 }
