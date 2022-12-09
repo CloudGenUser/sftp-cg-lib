@@ -6,24 +6,23 @@ https://github.com/CloudGenUser/sftp-component
 
 ## _1. Introduction_
 
-This code has the objective to establish connection with a sftp server and depending of the flag it will make an diferent action.
+This code has the objective to stablish connection with a sftp server and depending of the flag it will make an diferent action.
 
 Possible flags and their actions:
 
-CREATEDIRECTORY - Create a directory in a specific path.
+CREATEDIRECTORY - Create a directory in an specific path.
 DELETEDIRECTORY - Delete the directory and their content.
-DELETEFILE - Delete a file in a specific path.
-DOWNLOADIRECTORY - Download the directory inside a sftp in a local machine.
-GETFILE - Get the content of a file, a specific encoding can be requested.
-GETLISTFILES - Get the list of files and directories inside a specific path.
+DELETEFILE - Delete a file in an specific path.
+DOWNLOADIRECTORY - Dowload the directory inside an sftp in a local machine.
+GETFILE - Get the content of a file, an specific enconding can be requested.
+GETLISTFILES - Get the list of files and directgories inside a specific path.
 RENAMEFILE - Rename a file inside a path.
 SAVEFILE - Create a file inside the sftp server, the content of the file is a string that can have an specific encondig, the enconding must be specified.
 UPLOADIRECTORY - Take a directory for a local machine and save the content inside an sftp server.
 
-Any other flag will be considered as an invalid value and will return a message error.
+Any other flag will be consider as an invalid value and will return a message error.
 
 As components are used in the NXGP flows regardless that the library should be added on component code, when the flow is running, an exchange and some queues are created using the ID flow (assigned from NXGP).
-> Before returning the response, the method will validate that the output JSON is a correct JSON, if it is correct the flow will continue the method will return the result otherwise the method will send an exception and the flow will stop (only with flag GETLISTFILES).
 
 ## _2.	Library usage
 
@@ -36,19 +35,19 @@ The library can be installed from npm page with the next:
 
 - **Args:** 
 Needed:
-flag: The string that contains the action to execute, can be one of this: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, DOWNLOADIRECTORY, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE, UPLOADIRECTORY. The string is not case sensitive.
-host: The host where you will connect, can be an url or ip.
-path: The path where you will be working on.
-port: The port where you will access to the sftp server.
+flag: The string that contains the actinon to execute, can be one of this: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, DOWNLOADIRECTORY, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE, UPLOADIRECTORY. The string is not case sensitive.
+host: The host where where the connection will be stablished, can be a url or ip.
+path: The path that will be used to work on.
+port: The port that is open to access to the sftp server.
 username: The username that have grants to connect with the sftp server.
 nameDirectory: The name of the directory that will be created.
-path: The full path where you want to create the directory.
+path: The full path that will be used to create the directory.
 Optionals:
-key: Parameter that have the path where is the key and the name of the key file that can establish connection with the sftp, if you use this parameter avoid to use the password parameter, in case you specify the two parameters this will have priority and the password will be ignored.
-password: This parameter contains the password that can establish connection with the sftp.
+key: Parameter that have the path where is the key and the name of the key file that can stablish connection with the sftp, if this parameter is used avoid to use the password parameter, in case the two parameters are specified this will have priority and the password will be ignored.
+password: This parameter contains the password that can stablish connection with the sftp.
 
 - **Description:** This request will create a new directory inside the sftp server. Is posible to create a complete structure of directory in one request.
-Once the request is sent, the answer will be a string in a JSon format with the result of the excecution.
+Once the request is sended, the answear will be a string in a JSon format with the result of the excecution.
 .
 - **Sample of a request:**
 {
@@ -78,19 +77,19 @@ In case the directory exists this message will be shown:
 
 - **Args:** 
 Needed:
-flag: The string that contains the action to execute, can be one of this: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, DOWNLOADIRECTORY, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE, UPLOADIRECTORY. The string is not case sensitive.
-host: The host where you will connect, can be an url or ip.
-path: The path where you will be working on.
-port: The port where you will access to the sftp server.,
+flag: The string that contains the actinon to execute, can be one of this: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, DOWNLOADIRECTORY, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE, UPLOADIRECTORY. The string is not case sensitive.
+host: The host where where the connection will be stablished, can be a url or ip.
+path: The path that will be used to work on.
+port: The port that is open to access to the sftp server.,
 username: The username that have grants to connect with the sftp server.
-nameDirectory: The name of the directory that will be deleted with all the content inside it.
-path: The full path where you want to delete the directory.
+nameDirectory: The nama of the directory that will be deleted with all the content inside it.
+path: The full path that will be deleted the directory.
 Optionals:
-key: Parameter that have the path where is the key and the name of the key file that can establish connection with the sftp, if you use this parameter avoid to use the password parameter, in case you specify the two parameters this will have priority and the password will be ignored.
-password: This parameter contains the password that can establish connection with the sftp.
+key: Parameter that have the path where is the key and the name of the key file that can stablish connection with the sftp, if this parameter is used avoid to use the password parameter, in case the two parameters are specified this will have priority and the password will be ignored.
+password: This parameter contains the password that can stablish connection with the sftp.
 
 - **Description:** This request will delete a directory with all the documents inside it.
-Once the request is sent, the answer will be a string in a JSon format with the result of the excecution.
+Once the request is sended, the answear will be a string in a JSon format with the result of the excecution.
 
 - **Sample of a request:**
 {
@@ -122,19 +121,19 @@ In case the directory does not exist this message will be shown:
 
 - **Args:** 
 Needed:
-flag: The string that contains the action to execute, can be one of this: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, DOWNLOADIRECTORY, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE, UPLOADIRECTORY. The string is not case sensitive.
-host: The host where you will connect, can be an url or ip.
-path: The path where you will be working on.
-port: The port where you will access to the sftp server.,
+flag: The string that contains the actinon to execute, can be one of this: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, DOWNLOADIRECTORY, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE, UPLOADIRECTORY. The string is not case sensitive.
+host: The host where where the connection will be stablished, can be a url or ip.
+path: The path that will be used to work on.
+port: The port that is open to access to the sftp server.,
 username: The username that have grants to connect with the sftp server.
-file: The name of the file that will be deleted.
-path: The full path where you want to delete the file.
+file: The nama of the file that will be deleted.
+path: The full path where the file that will be delete is.
 Optionals:
-key: Parameter that have the path where is the key and the name of the key file that can establish connection with the sftp, if you use this parameter avoid to use the password parameter, in case you specify the two parameters this will have priority and the password will be ignored.
-password: This parameter contains the password that can establish connection with the sftp.
+key: Parameter that have the path where is the key and the name of the key file that can stablish connection with the sftp, if this parameter is used avoid to use the password parameter, in case the two parameters are specified this will have priority and the password will be ignored.
+password: This parameter contains the password that can stablish connection with the sftp.
 
 - **Description:** This request will delete a specific file in the sftp server.
-Once the request is sent, the answer will be a string in a JSon format with the result of the excecution.
+Once the request is sended, the answear will be a string in a JSon format with the result of the excecution.
 
 - **Sample of a request:**
 {
@@ -166,19 +165,19 @@ In case the file does not exist this message will be shown:
 
 - **Args:** 
 Needed:
-flag: The string that contains the action to execute, can be one of this: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, DOWNLOADIRECTORY, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE, UPLOADIRECTORY. The string is not case sensitive.
-host: The host where you will connect, can be an url or ip.
-path: The path where you will be working on.
-port: The port where you will access to the sftp server.,
+flag: The string that contains the actinon to execute, can be one of this: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, DOWNLOADIRECTORY, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE, UPLOADIRECTORY. The string is not case sensitive.
+host: The host where where the connection will be stablished, can be a url or ip.
+path: The path that will be used to work on.
+port: The port that is open to access to the sftp server.,
 username: The username that have grants to connect with the sftp server.
-path: The path of the directory that we want to download inside the sftp.
-nameDirectory: The path of the directory with the name that we want to create in our local machine. 
+path: The path of the directory that will be download inside the sftp.
+nameDirectory: The path of the directory with the name that will be created in the local machine. 
 Optionals:
-key: Parameter that have the path where is the key and the name of the key file that can establish connection with the sftp, if you use this parameter avoid to use the password parameter, in case you specify the two parameters this will have priority and the password will be ignored.
-password: This parameter contains the password that can establish connection with the sftp.
+key: Parameter that have the path where is the key and the name of the key file that can stablish connection with the sftp, if this parameter is used avoid to use the password parameter, in case the two parameters are specified this will have priority and the password will be ignored.
+password: This parameter contains the password that can stablish connection with the sftp.
 
-- **Description:** This request will get a directory of the sftp and will save all the content inside our local machine.
-Once the request is sent, the answer will be a string in a JSon format with the result of the excecution.
+- **Description:** This request will get a directory of the sftp and will save all the content inside the local machine.
+Once the request is sended, the answear will be a string in a JSon format with the result of the excecution.
 
 - **Sample of a request:**
 {
@@ -211,22 +210,22 @@ If the path of sftp servert that was specified does not existe this message will
 
 - **Args:** 
 Needed:
-flag: The string that contains the action to execute, can be one of this: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, DOWNLOADIRECTORY, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE, UPLOADIRECTORY. The string is not case sensitive.
-host: The host where you will connect, can be an url or ip.
-path: The path where you will be working on.
-port: The port where you will access to the sftp server.,
+flag: The string that contains the actinon to execute, can be one of this: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, DOWNLOADIRECTORY, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE, UPLOADIRECTORY. The string is not case sensitive.
+host: The host where where the connection will be stablished, can be a url or ip.
+path: The path that will be used to work on.
+port: The port that is open to access to the sftp server.,
 username: The username that have grants to connect with the sftp server.
 path: The path where is the file that will be get.
 file: The name of the file that will be get.
 Optionals:
-key: Parameter that have the path where is the key and the name of the key file that can establish connection with the sftp, if you use this parameter avoid to use the password parameter, in case you specify the two parameters this will have priority and the password will be ignored.
-password: This parameter contains the password that can establish connection with the sftp.
-encoding: The encoding that we want to use to get the file, if this parameter is not sent base64 will be taken as default.
+key: Parameter that have the path where is the key and the name of the key file that can stablish connection with the sftp, if this parameter is used avoid to use the password parameter, in case the two parameters are specified this will have priority and the password will be ignored.
+password: This parameter contains the password that can stablish connection with the sftp.
+encoding: The enconging that will be used to get the file, if this parameter is not sended base64 will be taken as default.
 
 - **Description:** This request will get the content of a file in a string.
-Once the request is sent, the answer will be a string in a JSon format with the result of the excecution.
+Once the request is sended, the answear will be a string in a JSon format with the result of the excecution.
 
-- **Sample of a request without encoding (the default content will be get in base64):**
+- **Sample of a request without encoding (the default countent will be get in base64):**
 {
 	"host":"localhost", 
 	"port":22, 
@@ -282,18 +281,18 @@ If a file that does not exist is tryed to be get this message will be shown:
 
 - **Args:** 
 Needed:
-flag: The string that contains the action to execute, can be one of this: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, DOWNLOADIRECTORY, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE, UPLOADIRECTORY. The string is not case sensitive.
-host: The host where you will connect, can be an url or ip.
-path: The path where you will be working on.
-port: The port where you will access to the sftp server.,
+flag: The string that contains the actinon to execute, can be one of this: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, DOWNLOADIRECTORY, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE, UPLOADIRECTORY. The string is not case sensitive.
+host: The host where where the connection will be stablished, can be a url or ip.
+path: The path that will be used to work on.
+port: The port that is open to access to the sftp server.,
 username: The username that have grants to connect with the sftp server.
-path: The path where we want to get the list of files and directories.
+path: The path where will be get the list of files and directories.
 Optionals:
-key: Parameter that have the path where is the key and the name of the key file that can establish connection with the sftp, if you use this parameter avoid to use the password parameter, in case you specify the two parameters this will have priority and the password will be ignored.
-password: This parameter contains the password that can establish connection with the sftp.
+key: Parameter that have the path where is the key and the name of the key file that can stablish connection with the sftp, if this parameter is used avoid to use the password parameter, in case the two parameters are specified this will have priority and the password will be ignored.
+password: This parameter contains the password that can stablish connection with the sftp.
 
 - **Description:** This request will get a string in json format with all the files and directories inside the path specified.
-Once the request is sent, the answer will be a string in a JSon format with the result of the excecution.
+Once the request is sended, the answear will be a string in a JSon format with the result of the excecution.
 
 - **Sample of a request:**
 {
@@ -355,21 +354,21 @@ If a path that does not exist is specified this message will be shown:
 
 - **Args:** 
 Needed:
-flag: The string that contains the action to execute, can be one of this: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, DOWNLOADIRECTORY, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE, UPLOADIRECTORY. The string is not case sensitive.
-host: The host where you will connect, can be an url or ip.
-path: The path where you will be working on.
-port: The port where you will access to the sftp server.,
+flag: The string that contains the actinon to execute, can be one of this: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, DOWNLOADIRECTORY, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE, UPLOADIRECTORY. The string is not case sensitive.
+host: The host where where the connection will be stablished, can be a url or ip.
+path: The path that will be used to work on.
+port: The port that is open to access to the sftp server.,
 username: The username that have grants to connect with the sftp server.
 path: The path where the file is.
 file: The old name of the file that will be renamed.
 nameNewFile: The new name of the file that will be used.
 Optionals:
-key: Parameter that have the path where is the key and the name of the key file that can establish connection with the sftp, if you use this parameter avoid to use the password parameter, in case you specify the two parameters this will have priority and the password will be ignored.
-password: This parameter contains the password that can establish connection with the sftp.
+key: Parameter that have the path where is the key and the name of the key file that can stablish connection with the sftp, if this parameter is used avoid to use the password parameter, in case the two parameters are specified this will have priority and the password will be ignored.
+password: This parameter contains the password that can stablish connection with the sftp.
 
 
 - **Description:** This request will rename a file inside the sftp.
-Once the request is sent, the answer will be a string in a JSon format with the result of the excecution.
+Once the request is sended, the answear will be a string in a JSon format with the result of the excecution.
 
 - **Sample of a request:**
 {
@@ -389,7 +388,7 @@ Resultant sample:
 
 "Successfully renamed \\testOldName.txt to \\testNewName.txt"
 
-if the file you want to rename does not exist you will have this message:
+if the file that will be renamed does not exist this message will be shown:
 
 {
     "code": 2,
@@ -402,21 +401,21 @@ if the file you want to rename does not exist you will have this message:
 
 - **Args:** 
 Needed:
-flag: The string that contains the action to execute, can be one of this: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, DOWNLOADIRECTORY, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE, UPLOADIRECTORY. The string is not case sensitive.
-host: The host where you will connect, can be an url or ip.
-path: The path where you will be working on.
-port: The port where you will access to the sftp server.,
+flag: The string that contains the actinon to execute, can be one of this: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, DOWNLOADIRECTORY, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE, UPLOADIRECTORY. The string is not case sensitive.
+host: The host where where the connection will be stablished, can be a url or ip.
+path: The path that will be used to work on.
+port: The port that is open to access to the sftp server.,
 username: The username that have grants to connect with the sftp server.
 content: The content of the file, that will be saved.
 path The path where the file will be saved.
-file: The name and extension we want to use for the new file.
+file: The name and extension that will be used for the new file.
 Optionals:
-key: Parameter that have the path where is the key and the name of the key file that can establish connection with the sftp, if you use this parameter avoid to use the password parameter, in case you specify the two parameters this will have priority and the password will be ignored.
-password: This parameter contains the password that can establish connection with the sftp.
-encoding: The encoding that we want to use to get the file, if this parameter is not sent base64 will be taken as default.
+key: Parameter that have the path where is the key and the name of the key file that can stablish connection with the sftp, if this parameter is used avoid to use the password parameter, in case the two parameters are specified this will have priority and the password will be ignored.
+password: This parameter contains the password that can stablish connection with the sftp.
+encoding: The enconging that will be used to get the file, if this parameter is not sended base64 will be taken as default.
 
 - **Description:** This request will save a file inside the sftp, the string with the content could be in severals formats, the parameter encoding sloud be specified in case of a content different to base64.
-Once the request is sent, the answer will be a string in a JSon format with the result of the excecution.
+Once the request is sended, the answear will be a string in a JSon format with the result of the excecution.
 
 - **Sample of a request no enconding specified so the content should be base64:**
 {
@@ -466,19 +465,19 @@ If the file that will be created already existe, the current file will be rename
 
 - **Args:** 
 Needed:
-flag: The string that contains the action to execute, can be one of this: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, DOWNLOADIRECTORY, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE, UPLOADIRECTORY. The string is not case sensitive.
-host: The host where you will connect, can be an url or ip.
-path: The path where you will be working on.
-port: The port where you will access to the sftp server.,
+flag: The string that contains the actinon to execute, can be one of this: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, DOWNLOADIRECTORY, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE, UPLOADIRECTORY. The string is not case sensitive.
+host: The host where where the connection will be stablished, can be a url or ip.
+path: The path that will be used to work on.
+port: The port that is open to access to the sftp server.,
 username: The username that have grants to connect with the sftp server.
 nameDirectory: The path of the directory source that will be uploaded.
 path: The path where the directory will be uploaded and the name of the new directory.
 Optionals:
-key: Parameter that have the path where is the key and the name of the key file that can establish connection with the sftp, if you use this parameter avoid to use the password parameter, in case you specify the two parameters this will have priority and the password will be ignored.
-password: This parameter contains the password that can establish connection with the sftp.
+key: Parameter that have the path where is the key and the name of the key file that can stablish connection with the sftp, if this parameter is used avoid to use the password parameter, in case the two parameters are specified this will have priority and the password will be ignored.
+password: This parameter contains the password that can stablish connection with the sftp.
 
 - **Description:** This request will send the content of a local directory to the sftp server.
-Once the request is sent, the answer will be a string in a JSon format with the result of the excecution.
+Once the request is sended, the answear will be a string in a JSon format with the result of the excecution.
 
 - **Sample of a request:**
 {
